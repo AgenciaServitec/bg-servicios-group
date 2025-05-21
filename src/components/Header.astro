@@ -1,15 +1,52 @@
 ---
+import { Icon } from 'astro-icon/components'
 
+import ContentWidth from "./ContentWidth.astro";
 ---
 
-<header class="flex flex-col md:flex-row justify-between">
-  <img class="w-60" src="/logo.png" alt="Logo de BG Servicios Group" />
-  <nav>
-    <ul class="flex gap-4">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="#services">Servicios</a></li>
-      <li><a href="#testimonies">Testimonios</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-  </nav>
+<header>
+  <ContentWidth>
+    <div class="flex flex-col rounded-bl-xl rounded-br-xl overflow-hidden bg-gray-100">
+      <div class="flex justify-between items-center border-b border-gray-200 py-4 px-6">
+        <img class="w-60" src="/logo.png" alt="Logo de BG Servicios Group" />
+        <div class="flex items-center gap-4">
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:phone" size={20} class="text-blue-400" />
+            <span>999 999 999</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:email" size={20} class="text-blue-400" />
+            <span>hola@bgservicios.com</span>
+          </div>
+          <button class="flex items-center gap-2 bg-blue-400 text-white p-2 rounded-lg font-semibold">
+            <Icon name="mdi:message" size={20} />
+            <span>
+              Consulta gratis
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="flex justify-between items-center py-4 px-6">
+        <nav>
+          <ul class="flex gap-8 font-semibold">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#testimonies">Testimonios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-blue-500 flex justify-center items-center rounded-full">
+            <Icon name="mdi:facebook" size={20} color="white" />
+          </div>
+          <div class="w-8 h-8 bg-blue-500 flex justify-center items-center rounded-full">
+            <Icon name="mdi:instagram" size={20} color="white" />
+          </div>
+          <div class="w-8 h-8 bg-blue-500 flex justify-center items-center rounded-full">
+            <Icon name="mdi:youtube" size={20} color="white" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </ContentWidth>
 </header>

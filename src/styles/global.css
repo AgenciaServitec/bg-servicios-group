@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+@theme {
+    --color-chathams-blue-50: #f0faff;
+    --color-chathams-blue-100: #e0f4fe;
+    --color-chathams-blue-200: #b9eafe;
+    --color-chathams-blue-300: #7bdbfe;
+    --color-chathams-blue-400: #35c9fb;
+    --color-chathams-blue-500: #0bb2ec;
+    --color-chathams-blue-600: #0090ca;
+    --color-chathams-blue-700: #0173a3;
+    --color-chathams-blue-800: #056187;
+    --color-chathams-blue-900: #0a4c6a;
+    --color-chathams-blue-950: #07334a;
+}
