@@ -1,0 +1,69 @@
+---
+import { Icon } from "astro-icon/components";
+import SocialIcon from "./SocialIcon.astro";
+---
+
+<dialog
+  role="dialog"
+  aria-modal="true"
+  id="navbar"
+  class="flex flex-col gap-6 bg-secondary z-50 max-h-[80vh] w-full max-w-full translate-x-0 duration-300 lg:hidden starting:translate-x-full [&:not([open])]:translate-x-full p-2 text-white"
+>
+  <Icon
+    id="btnCloseNavbar"
+    name="mdi:close"
+    size={30}
+    class="self-end text-white cursor-pointer"
+  />
+  <nav>
+    <ul class="flex flex-col gap-2 text-white font-bold">
+      <li>
+        <a
+          href="/"
+          class="block p-2 hover:bg-white hover:text-secondary-light rounded-lg duration-300"
+          >Inicio</a
+        >
+      </li>
+      <li>
+        <a
+          href="#services"
+          class="block p-2 hover:bg-white hover:text-secondary-light rounded-lg duration-300"
+          >Servicios</a
+        >
+      </li>
+      <li>
+        <a
+          href="#testimonies"
+          class="block p-2 hover:bg-white hover:text-secondary-light rounded-lg duration-300"
+          >Testimonios</a
+        >
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class="block p-2 bg-white/50 hover:bg-white hover:text-secondary-light rounded-lg duration-300"
+          >Contacto</a
+        >
+      </li>
+    </ul>
+  </nav>
+  <div
+    class="flex flex-col items-center gap-4 bg-primary px-2 py-4 rounded-lg text-sm border border-dashed border-secondary"
+  >
+    <div class="flex flex-wrap gap-4">
+      <a href="#" class="flex items-center gap-2">
+        <Icon name="mdi:phone" size={20} class="text-secondary" />
+        <span>999 999 999</span>
+      </a>
+      <a href="#" class="flex items-center gap-2">
+        <Icon name="mdi:email" size={20} class="text-secondary" />
+        <span>hola@bgservicios.com</span>
+      </a>
+    </div>
+    <div class="flex items-center gap-2">
+      <SocialIcon name="mdi:facebook" />
+      <SocialIcon name="mdi:instagram" />
+      <SocialIcon name="mdi:youtube" />
+    </div>
+  </div>
+</dialog>
