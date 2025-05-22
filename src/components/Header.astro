@@ -1,15 +1,84 @@
 ---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
+import ContentWidth from "./ContentWidth.astro";
+import SocialIcon from "./SocialIcon.astro";
+import Navbar from "./Navbar.astro";
 ---
 
-<header class="flex flex-col md:flex-row justify-between">
-  <img class="w-60" src="/logo.png" alt="Logo de BG Servicios Group" />
-  <nav>
-    <ul class="flex gap-4">
-      <li><a href="/">Inicio</a></li>
-      <li><a href="#services">Servicios</a></li>
-      <li><a href="#testimonies">Testimonios</a></li>
-      <li><a href="#contact">Contacto</a></li>
-    </ul>
-  </nav>
+<header class="w-full">
+  <ContentWidth>
+    <div
+      class="flex flex-col rounded-bl-xl rounded-br-xl overflow-hidden bg-background text-foreground"
+    >
+      <div
+        class="flex justify-between items-center lg:border-b border-gray-200 p-2 lg:py-4 lg:px-6"
+      >
+        <Image
+          src="/logo.png"
+          alt="Logo de BG Servicios Group"
+          width="150"
+          height="100"
+          loading="eager"
+        />
+        <div class="hidden lg:flex items-center gap-4">
+          <a href="#" class="flex items-center gap-2">
+            <Icon name="mdi:phone" size={20} class="text-secondary" />
+            <span>999 999 999</span>
+          </a>
+          <a href="#" class="flex items-center gap-2">
+            <Icon name="mdi:email" size={20} class="text-secondary" />
+            <span>hola@bgservicios.com</span>
+          </a>
+          <button
+            class="flex items-center gap-2 bg-linear-to-r from-secondary to-primary text-white p-2 rounded-lg font-semibold cursor-pointer"
+          >
+            <Icon name="mdi:message" size={20} />
+            <span> Consulta gratis </span>
+          </button>
+        </div>
+        <Icon
+          id="btnActiveNavbar"
+          name="mdi:menu"
+          size={30}
+          class="flex lg:hidden text-accent cursor-pointer"
+        />
+      </div>
+      <div class="hidden lg:flex justify-between items-center py-4 px-6">
+        <nav>
+          <ul class="flex gap-8 font-semibold">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#testimonies">Testimonios</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="flex items-center gap-2">
+          <SocialIcon name="mdi:facebook" />
+          <SocialIcon name="mdi:instagram" />
+          <SocialIcon name="mdi:youtube" />
+        </div>
+      </div>
+    </div>
+  </ContentWidth>
+  <Navbar />
 </header>
+
+<script>
+  const navbar = document.querySelector("#navbar") as HTMLDialogElement;
+  const btnActiveNavbar = document.querySelector(
+    "#btnActiveNavbar",
+  ) as HTMLElement;
+  const btnCloseNavbar = document.querySelector(
+    "#btnCloseNavbar",
+  ) as HTMLElement;
+
+  btnActiveNavbar.addEventListener("click", () => {
+    navbar.showModal();
+  });
+
+  btnCloseNavbar.addEventListener("click", () => {
+    navbar.close();
+  });
+</script>
