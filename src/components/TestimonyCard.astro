@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  comment: string;
+  name: string;
+  icon: string;
+}
+
+const { comment, name, icon } = Astro.props;
+---
+
+<article>
+  <div
+    class="h-40 flex relative bg-secondary-100 rounded-xl italic border border-secondary-200 p-4"
+  >
+    <p class="items-center">{comment}</p>
+    <div class="w-40 h-40 absolute -bottom-10 left-0 bg-red-600 triangle z-50">
+    </div>
+  </div>
+
+  <div class="flex items-center gap-6">
+    <Icon name={icon} size={30} class="text-accent" />
+    <div>
+      <span class="text-lg font-semibold text-gray-900">{name}</span>
+    </div>
+  </div>
+</article>
+
+<style>
+  .triangle {
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+</style>
+
+<!--class="absolute -bottom-4 left-8 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[20px] border-t-secondary-100"-->

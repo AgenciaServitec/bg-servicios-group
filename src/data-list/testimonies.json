@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Pablo",
+    "comment": "Excelente servicio de instalación y reparación de aire acondicionado. BGServicios respondió rápido y dejó todo funcionando perfecto.",
+    "icon": "mdi:user-circle"
+  },{
+    "name": "Noel",
+    "comment": "Contratamos a BGServicios para la limpieza y revestimiento de ductos, ¡y la mejora en la calidad del aire fue inmediata!",
+    "icon": "mdi:user-circle"
+  },{
+    "name": "Gala",
+    "comment": "Muy profesionales con el aislamiento del ático. Se nota la diferencia en la temperatura y eficiencia del hogar.",
+    "icon": "mdi:user-circle"
+  }
+]

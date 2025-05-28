@@ -1,19 +1,29 @@
 ---
-import TestimonieCard from "./TestimonieCard.astro";
+import TestimonyCard from "./TestimonyCard.astro";
+import ContentWidth from "./ContentWidth.astro";
+
+import testimonies from "../data-list/testimonies.json";
 ---
 
 <section>
-  <h2 class="flex justify-center text-xl text-gray-700 mb-6">TESTIMONIOS</h2>
-  <p class="flex justify-center text-3xl font-bold text-gray-900 mb-2">Reseñas honestas de nuestros clientes que han utilizado nuestros servicios</p>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-  <TestimonieCard text="Excelente servicio de instalación y reparación de aire acondicionado. BGServicios respondió rápido y dejó todo funcionando perfecto." name="Pablo" position="SEO" image="dfdf" />
-  <TestimonieCard text="Contratamos a BGServicios para la limpieza y revestimiento de ductos, ¡y la mejora en la calidad del aire fue inmediata!" name="Noel" position="SEO" image="dfdf" />
-  <TestimonieCard text="Muy profesionales con el aislamiento del ático. Se nota la diferencia en la temperatura y eficiencia del hogar." name="Gala" position="SEO" image="dfdf" />
-  </div>
+  <ContentWidth>
+    <div class="text-center font-museoModerno font-bold mb-4 md:mb-8">
+      <span class="text-sm md:text-base uppercase text-secondary"
+        >Testimonios</span
+      >
+      <h2 class="text-3xl md:text-5xl lg:text-6xl">
+        Reseñas honestas de nuestros clientes
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {
+        testimonies.map(({ name, comment, icon }) => (
+          <TestimonyCard name={name} comment={comment} icon={icon} />
+        ))
+      }
+    </div>
+  </ContentWidth>
 </section>
-
-
-
 
 >
 
