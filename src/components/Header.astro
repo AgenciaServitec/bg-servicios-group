@@ -23,11 +23,11 @@ import Navbar from "./Navbar.astro";
           loading="eager"
         />
         <div class="hidden lg:flex items-center gap-4">
-          <a href="#" class="flex items-center gap-2">
+          <a href="tel:999999999" class="flex items-center gap-2">
             <Icon name="mdi:phone" size={20} class="text-secondary" />
             <span>999 999 999</span>
           </a>
-          <a href="#" class="flex items-center gap-2">
+          <a href="mailto:hola@bgservicios.com" class="flex items-center gap-2">
             <Icon name="mdi:email" size={20} class="text-secondary" />
             <span>hola@bgservicios.com</span>
           </a>
@@ -55,9 +55,18 @@ import Navbar from "./Navbar.astro";
           </ul>
         </nav>
         <div class="flex items-center gap-2">
-          <SocialIcon name="mdi:facebook" />
-          <SocialIcon name="mdi:instagram" />
-          <SocialIcon name="mdi:youtube" />
+          <SocialIcon
+            name="mdi:facebook"
+            link="https://www.facebook.com/bgservicios"
+          />
+          <SocialIcon
+            name="mdi:instagram"
+            link="https://www.instagram.com/bgservicios"
+          />
+          <SocialIcon
+            name="mdi:youtube"
+            link="https://www.youtube.com/bgservicios"
+          />
         </div>
       </div>
     </div>
