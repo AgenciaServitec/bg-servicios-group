@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon?: string;
+  link: string;
+}
+
+const { icon, link = "#" } = Astro.props;
+---
+
+<a
+  href={link}
+  class="flex items-center gap-2 bg-gradient-to-r from-secondary-300 to-secondary-500 hover:from-secondary-300 hover:to-secondary-300 cursor-pointer transition duration-300 px-6 py-4 rounded-lg font-semibold md:text-lg text-white"
+>
+  {icon && <Icon name={icon} size={25} />}
+  <span>
+    <slot />
+  </span>
+</a>
