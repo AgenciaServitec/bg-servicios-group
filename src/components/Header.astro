@@ -5,76 +5,90 @@ import { Icon } from "astro-icon/components";
 import ContentWidth from "./ContentWidth.astro";
 import SocialIcon from "./SocialIcon.astro";
 import Navbar from "./Navbar.astro";
+import LinkButton from "./LinkButton.astro";
 ---
 
-<header class="w-full fixed top-0 z-60">
-  <ContentWidth>
-    <div
-      class="flex flex-col rounded-bl-xl rounded-br-xl overflow-hidden bg-background text-foreground"
-    >
+<header id="header" class="w-full fixed top-0 z-60">
+  <div id="header-background" class="bg-transparent transition duration-300">
+    <ContentWidth>
       <div
-        class="flex justify-between items-center lg:border-b border-gray-200 p-2 lg:py-4 lg:px-6"
+        id="header-top"
+        class="flex flex-col rounded-bl-xl rounded-br-xl overflow-hidden bg-background p-4 lg:p-0"
       >
-        <Image
-          src="/logo.png"
-          alt="Logo de BG Servicios Group"
-          width="150"
-          height="100"
-          loading="eager"
-        />
-        <div class="hidden lg:flex items-center gap-4">
-          <a href="tel:999999999" class="flex items-center gap-2">
-            <Icon name="mdi:phone" size={20} class="text-secondary" />
-            <span>999 999 999</span>
-          </a>
-          <a href="mailto:hola@bgservicios.com" class="flex items-center gap-2">
-            <Icon name="mdi:email" size={20} class="text-secondary" />
-            <span>hola@bgservicios.com</span>
-          </a>
-          <button
-            class="flex items-center gap-2 bg-linear-to-r from-secondary to-primary text-white p-2 rounded-lg font-semibold cursor-pointer"
-          >
-            <Icon name="mdi:message" size={20} />
-            <span> Consulta gratis </span>
-          </button>
-        </div>
-        <Icon
-          id="btnActiveNavbar"
-          name="mdi:menu"
-          size={30}
-          class="flex lg:hidden text-accent cursor-pointer"
-        />
-      </div>
-      <div class="hidden lg:flex justify-between items-center py-4 px-6">
-        <nav>
-          <ul class="flex gap-8 font-semibold">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="#services">Servicios</a></li>
-            <li><a href="#testimonies">Testimonios</a></li>
-            <li><a href="#contact">Contacto</a></li>
-          </ul>
-        </nav>
-        <div class="flex items-center gap-2">
-          <SocialIcon
-            name="mdi:facebook"
-            link="https://www.facebook.com/bgservicios"
+        <div
+          class="flex justify-between items-center lg:border-b border-gray-200 lg:py-4 lg:px-6"
+        >
+          <Image
+            src="/logo.png"
+            alt="Logo de BG Servicios Group"
+            width="150"
+            height="100"
+            loading="eager"
           />
-          <SocialIcon
-            name="mdi:instagram"
-            link="https://www.instagram.com/bgservicios"
-          />
-          <SocialIcon
-            name="mdi:youtube"
-            link="https://www.youtube.com/bgservicios"
+          <div class="hidden lg:flex items-center gap-4">
+            <a href="tel:999999999" class="flex items-center gap-2">
+              <Icon
+                name="mdi:phone"
+                size={20}
+                class="text-secondary-500 hover:text-secondary-300"
+              />
+              <span>999 999 999</span>
+            </a>
+            <a
+              href="mailto:hola@bgservicios.com"
+              class="flex items-center gap-2"
+            >
+              <Icon
+                name="mdi:email"
+                size={20}
+                class="text-secondary-500 hover:text-secondary-300"
+              />
+              <span>hola@bgservicios.com</span>
+            </a>
+            <LinkButton icon="mdi:message" link="#">Consulta gratis</LinkButton>
+          </div>
+          <Icon
+            id="btnActiveNavbar"
+            name="mdi:menu"
+            size={30}
+            class="flex lg:hidden text-accent cursor-pointer"
           />
         </div>
+        <div class="hidden lg:flex justify-between items-center py-4 px-6">
+          <nav>
+            <ul class="flex gap-8 font-semibold">
+              <li><a href="/">Inicio</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#testimonies">Testimonios</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </nav>
+          <div class="flex items-center gap-2">
+            <SocialIcon
+              name="mdi:facebook"
+              link="https://www.facebook.com/bgservicios"
+            />
+            <SocialIcon
+              name="mdi:instagram"
+              link="https://www.instagram.com/bgservicios"
+            />
+            <SocialIcon
+              name="mdi:youtube"
+              link="https://www.youtube.com/bgservicios"
+            />
+          </div>
+        </div>
       </div>
-    </div>
-  </ContentWidth>
+    </ContentWidth>
+  </div>
   <Navbar />
 </header>
 
 <script>
+  const headerBackground = document.querySelector(
+    "#header-background",
+  ) as HTMLElement;
+  const headerTop = document.querySelector("#header-top") as HTMLElement;
   const navbar = document.querySelector("#navbar") as HTMLDialogElement;
   const btnActiveNavbar = document.querySelector(
     "#btnActiveNavbar",
@@ -89,5 +103,19 @@ import Navbar from "./Navbar.astro";
 
   btnCloseNavbar.addEventListener("click", () => {
     navbar.close();
+  });
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      headerBackground.classList.remove("bg-transparent");
+      headerBackground.classList.add("bg-background", "shadow-lg");
+      headerTop.classList.remove("px-4");
+      headerTop.classList.add("px-0");
+    } else {
+      headerBackground.classList.add("bg-transparent");
+      headerBackground.classList.remove("bg-background", "shadow-lg");
+      headerTop.classList.add("px-4");
+      headerTop.classList.remove("px-0");
+    }
   });
 </script>
