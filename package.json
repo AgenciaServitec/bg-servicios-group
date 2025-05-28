@@ -17,6 +17,8 @@
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
+    "@iconify-json/fa": "^1.2.1",
+    "@iconify-json/gravity-ui": "^1.2.5",
     "@iconify-json/mdi": "^1.2.3",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1"

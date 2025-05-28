@@ -1,29 +1,41 @@
 ---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
 interface Props {
-title: string;
-description: string;
-image: string;
-icon: string;
+  title: string;
+  description: string;
+  image: string;
+  icon: string;
 }
 
-const {title, image, description, icon} = Astro.props;
+const { title, image, description, icon } = Astro.props;
 ---
+
 <article>
-  <div>
-      <div
-        class="relative h-72 rounded-xl overflow-hidden shadow-lg group"
-        style={`background-image: url("${image}"); background-size: cover; background-position: center;`}
-      >
-        <div class="absolute bottom-0 left-0 bg-white bg-opacity-95 p-4 flex items-start gap-3 rounded-tr-lg w-[85%]">
-
-          <img src="" alt="" class="w-10 h-10" />
-
-          <div>
-            <h3 class="text-lg font-semibold">{title}</h3>
-            <p class="text-sm text-gray-600">{description}</p>
-          </div>
-        </div>
+  <div class="relative h-96 rounded-xl overflow-hidden shadow-xl">
+    <Image
+      src={image}
+      alt={`Imagen de ${title}`}
+      width="200"
+      height="200"
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+    <div
+      class="w-80 lg:w-96 flex items-center gap-4 absolute bottom-0 left-0 bg-white rounded-tr-xl p-4"
+    >
+      <div class="border-3 border-secondary-200 rounded-full p-2">
+        <Icon name={icon} size={30} class="text-secondary-200" />
       </div>
-
+      <div>
+        <h3 class="md:text-lg font-museoModerno font-semibold text-pretty mb-2">
+          {title}
+        </h3>
+        <p class="text-xs md:text-sm text-muted text-balance">
+          {description}
+        </p>
+      </div>
+    </div>
   </div>
 </article>
