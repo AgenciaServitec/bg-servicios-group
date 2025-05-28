@@ -11,18 +11,18 @@ const { comment, name, icon } = Astro.props;
 
 <article>
   <div
-    class="h-40 flex relative bg-secondary-100 rounded-xl italic border border-secondary-200 p-4"
+    class="h-40 flex items-center relative bg-secondary-100 rounded-xl italic border border-secondary-200 p-4"
   >
-    <p class="items-center">{comment}</p>
-    <div class="w-40 h-40 absolute -bottom-10 left-0 bg-red-600 triangle z-50">
+    <p class="items-center text-muted">{comment}</p>
+    <div
+      class="w-8 h-5 absolute -bottom-3 left-8 bg-secondary-100 triangle z-50"
+    >
     </div>
   </div>
 
-  <div class="flex items-center gap-6">
-    <Icon name={icon} size={30} class="text-accent" />
-    <div>
-      <span class="text-lg font-semibold text-gray-900">{name}</span>
-    </div>
+  <div class="flex items-center gap-2 p-4">
+    <Icon name={icon} size={65} class="text-muted" />
+    <span class="text-lg font-semibold">{name}</span>
   </div>
 </article>
 
@@ -31,5 +31,3 @@ const { comment, name, icon } = Astro.props;
     clip-path: polygon(50% 100%, 0 0, 100% 0);
   }
 </style>
-
-<!--class="absolute -bottom-4 left-8 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[20px] border-t-secondary-100"-->

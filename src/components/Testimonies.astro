@@ -5,17 +5,17 @@ import ContentWidth from "./ContentWidth.astro";
 import testimonies from "../data-list/testimonies.json";
 ---
 
-<section>
+<section class="py-20">
   <ContentWidth>
     <div class="text-center font-museoModerno font-bold mb-4 md:mb-8">
       <span class="text-sm md:text-base uppercase text-secondary"
         >Testimonios</span
       >
-      <h2 class="text-3xl md:text-5xl lg:text-6xl">
+      <h2 class="text-3xl md:text-5xl">
         Reseñas honestas de nuestros clientes
       </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {
         testimonies.map(({ name, comment, icon }) => (
           <TestimonyCard name={name} comment={comment} icon={icon} />
