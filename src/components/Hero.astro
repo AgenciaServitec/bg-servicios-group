@@ -1,29 +1,28 @@
 ---
 import ContentWidth from "./ContentWidth.astro";
+import LinkButton from "./LinkButton.astro";
 ---
 
 <section
-  class="w-full h-svh top-0 left-0 bg-[url('/images/hero.jpeg')] bg-cover bg-center"
+  class="w-full h-svh top-0 left-0 bg-[url('/images/hero.jpg')] bg-cover bg-top"
 >
-  <div class="w-full h-full bg-linear-to-r from-primary/90 to-primary/20">
+  <div
+    class="w-full h-full bg-linear-to-r from-primary-900/80 to-primary-500/20"
+  >
     <ContentWidth>
       <div class="w-full h-svh flex items-center">
         <div class="flex flex-col items-start gap-6 max-w-[40rem] text-white">
           <h2
-            class="text-4xl md:text-6xl lg:text-7xl font-museoModerno font-semibold text-pretty"
+            class="text-5xl md:text-6xl lg:text-7xl font-museoModerno font-semibold text-pretty"
           >
             Ambientes frescos todo el año
           </h2>
-          <p class="text-balance text-sm md:text-base">
+          <p class="md:text-lg text-balance">
             Instalamos, vendemos y damos mantenimiento a sistemas de aire
             acondicionado para hogares y empresas. Servicio rápido, técnico y
             garantizado.
           </p>
-          <a
-            href="#"
-            class="bg-linear-to-r from-secondary to-secondary-700 p-2 rounded-lg font-semibold cursor-pointer"
-            >Contáctanos ahora</a
-          >
+          <LinkButton link="#contact">Contáctanos ahora</LinkButton>
         </div>
       </div>
     </ContentWidth>
