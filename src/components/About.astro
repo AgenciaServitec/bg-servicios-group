@@ -1,12 +1,40 @@
 ---
+import { Image } from "astro:assets";
 
+import ContentWidth from "./ContentWidth.astro";
+import AboutInformation from "./AboutInformation.astro";
+
+import about from "../data-list/about.json";
 ---
 
-<section>
-  <div class="text-center font-museoModerno font-bold mb-4 md:mb-8">
-    <span class="text-sm md:text-base uppercase text-secondary"
-      >Sobre nosotros</span
-    >
-    <h2 class="text-3xl md:text-5xl">Conócenos</h2>
-  </div>
+<section class="py-20">
+  <ContentWidth>
+    <div class="h-auto text-center font-museoModerno font-bold mb-4 md:mb-8">
+      <span class="text-sm md:text-base uppercase text-secondary"
+        >Sobre nosotros</span
+      >
+      <h2 class="text-3xl md:text-5xl">Conócenos</h2>
+    </div>
+    <div class="flex flex-col xl:flex-row gap-4 xl:gap-20">
+      <Image
+        width="1000"
+        height="200"
+        src="/images/about.jpg"
+        alt="Imagen de un técnico haciendo mantenimiento a un aire acondicionado."
+        class="lg:max-h-[28rem] rounded-xl"
+        loading="lazy"
+      />
+      <div class="flex flex-col justify-between gap-4">
+        {
+          about.map(({ title, description, icon }) => (
+            <AboutInformation
+              title={title}
+              description={description}
+              icon={icon}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </ContentWidth>
 </section>

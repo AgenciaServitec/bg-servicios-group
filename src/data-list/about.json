@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Visión",
+    "description": "Ser referentes en servicios técnicos y soluciones integrales, con eficiencia y confianza.",
+    "icon": "mdi:lightbulb-multiple"
+  },{
+    "title": "Misión",
+    "description": "Ofrecer mantenimiento y soporte técnico de calidad, adaptado a cada cliente.",
+    "icon": "mdi:air-filter"
+  },{
+    "title": "Lema",
+    "description": "Soluciones efectivas, compromiso real.",
+    "icon": "mdi:thunder-outline"
+  }
+]
