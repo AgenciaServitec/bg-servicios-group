@@ -48,3 +48,11 @@
     --font-sans: 'Inter Variable', sans-serif;
     --font-museoModerno: 'MuseoModerno Variable', system-ui;
 }
+
+.input {
+    @apply h-15 border border-gray-300 rounded-lg focus:border-secondary-500 focus:outline focus:outline-secondary-500 p-4;
+}
+
+.textarea {
+    @apply border border-gray-300 rounded-lg focus:border-secondary-500 focus:outline focus:outline-secondary-500 p-4;
+}
