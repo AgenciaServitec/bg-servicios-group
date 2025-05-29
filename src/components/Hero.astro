@@ -1,10 +1,11 @@
 ---
 import ContentWidth from "./ContentWidth.astro";
 import LinkButton from "./LinkButton.astro";
+import Appointment from "./Appointment.astro";
 ---
 
 <section
-  class="w-full h-svh top-0 left-0 bg-[url('/images/hero.jpg')] bg-cover bg-top"
+  class="relative w-full h-svh top-0 left-0 bg-[url('/images/hero.jpg')] bg-cover bg-top"
 >
   <div
     class="w-full h-full bg-linear-to-r from-primary-900/80 to-primary-500/20"
@@ -27,4 +28,5 @@ import LinkButton from "./LinkButton.astro";
       </div>
     </ContentWidth>
   </div>
+  <Appointment />
 </section>
