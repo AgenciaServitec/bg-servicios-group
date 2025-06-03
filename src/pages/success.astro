@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import LinkButton from "../components/LinkButton.astro";
+---
+
+<Layout>
+  <section id="contact-us" class="h-svh bg-primary-100 flex flex-col items-center justify-center gap-4 w-full text-center">
+    <Icon name="mdi:success-circle-outline" class="text-green-400 text-5xl" />
+    <h1 class="text-xl lg:text-3xl">¡Mensaje enviado con éxito!</h1>
+
+    <p class="text-sm lg:text-base">
+      Gracias por confiar en <span class="">nuestra empresa constructora</span>. Pronto nos pondremos en contacto contigo para ayudarte con tu proyecto.
+    </p>
+    <LinkButton link="/">
+      Volver al inicio
+    </LinkButton>
+  </section>
+</Layout>

@@ -2,7 +2,7 @@
 
 ---
 
-<form
+<form id="formContact" method="POST"
   class="w-full lg:flex-1 flex flex-col gap-4 max-w-[40rem] bg-background p-4 rounded-lg"
 >
   <input
@@ -27,3 +27,56 @@
     class="border border-muted rounded-lg p-2"></textarea>
   <button class="bg-primary-500 rounded-lg p-2">Enviar</button>
 </form>
+
+<script>
+  const form = document.getElementById('formContact') as HTMLFormElement;
+
+  form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fullName = form.children[0].value.trim();
+      const email = form.children[1].value.trim();
+      const phoneNumber = form.children[2].value.trim();
+      const message = form.children[3].value.trim();
+      const button = form.children[4];
+
+      const contact = {
+        fullName,
+        email,
+        phone: {
+          countryCode: "+51",
+          number: phoneNumber,
+        },
+        message,
+        hostname: "bg-servicios.com"
+      }
+
+    try {
+      button.disabled = true;
+      button.textContent = "Cargando...";
+      button.classList.add("opacity-60", "cursor-not-allowed");
+
+      const result = await fetch("https://api-servitecsales.web.app/emails/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({ contact }),
+        },
+      )
+
+      form.reset();
+
+      window.location.href = "/success"
+
+    }catch(error) {console.error("Error:", error);} finally {
+      button.disabled = false;
+      button.textContent = "Envíar Mensaje";
+      button.classList.remove("opacity-60", "cursor-not-allowed");
+    }
+
+    }
+  )
+
+</script>
