@@ -18,13 +18,15 @@ import LinkButton from "./LinkButton.astro";
         <div
           class="flex justify-between items-center lg:border-b border-gray-200 lg:py-4 lg:px-6"
         >
-          <Image
-            src="/logo.png"
-            alt="Logo de BG Servicios Group"
-            width="150"
-            height="100"
-            loading="eager"
-          />
+          <a href="/">
+            <Image
+              src="/logo.png"
+              alt="Logo de BG Servicios Group"
+              width="150"
+              height="100"
+              loading="eager"
+            />
+          </a>
           <div class="hidden lg:flex items-center gap-4">
             <a href="tel:999999999" class="flex items-center gap-2">
               <Icon
@@ -45,7 +47,9 @@ import LinkButton from "./LinkButton.astro";
               />
               <span>hola@bgservicios.com</span>
             </a>
-            <LinkButton icon="mdi:message" link="#">Consulta gratis</LinkButton>
+            <LinkButton icon="mdi:message" link="/#contact"
+              >Consulta gratis</LinkButton
+            >
           </div>
           <Icon
             id="btnActiveNavbar"
@@ -58,9 +62,9 @@ import LinkButton from "./LinkButton.astro";
           <nav>
             <ul class="flex gap-8 font-semibold">
               <li><a href="/">Inicio</a></li>
-              <li><a href="#services">Servicios</a></li>
-              <li><a href="#testimonies">Testimonios</a></li>
-              <li><a href="#contact">Contacto</a></li>
+              <li><a href="/#services">Servicios</a></li>
+              <li><a href="/#testimonies">Testimonios</a></li>
+              <li><a href="/#contact">Contacto</a></li>
             </ul>
           </nav>
           <div class="flex items-center gap-2">
